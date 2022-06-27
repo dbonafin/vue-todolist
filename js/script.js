@@ -3,7 +3,7 @@
 // - text, una stringa che indica il testo del todo
 // - done, un booleano (true/false) che indica se il todo è stato fatto oppure no
 
-// MILESTONE 1
+// MILESTONE 1 - Html Ln 22 -
 // Stampare all'interno di una lista, un item per ogni todo.
 // Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
 
@@ -13,14 +13,28 @@
 // MILESTONE 3
 // Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
 
+
 var app = new Vue(
    {
     el: "#root",
     data: {
         listToDo: [
-            "Andare in palestra",
-            "Fare la spesa",
-            "Chiamare il dottore"
+            {
+                text: "Andare in palestra",
+                done: false
+            },
+            {
+                text: "Fare la spesa",
+                done: false
+            },
+            {
+                text:"Chiamare il dottore",
+                done: true
+            },
+            {
+                text:"Andare dal barbiere",
+                done: false
+            },
         ]
     },
    }

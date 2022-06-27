@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Vue todo list</title>
@@ -17,6 +18,19 @@
 
         <div class="list-container">
 
+            <ul class="todo-ul">
+                <!-- For each object in the array print a list-element in the DOM -->
+                <!-- If the element has the key done === true -> apply the css class "done" -->
+                <li v-for="singleToDo in listToDo" :class="{ 'done': singleToDo.done }">
+
+                    <p>{{singleToDo.text}}</p>
+                    
+                    <div class="remove-mark">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </div>
+                </li>
+            </ul>
+            
         </div>
 
     </div>
