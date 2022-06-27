@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+/* COMMON */
+
 body {
     background-color: beige;
     font-size: 20px;
@@ -14,11 +16,40 @@ h1 {
     padding: 10px 0;
 }
 
+/* MAIN LAYOUT */
+
 .input-container {
     width: 60%;
     margin: 0 auto;
     margin-top: 60px;
     text-align: center;
+}
+
+.list-container {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 60px;
+    background-color: lightblue;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* LAYOUT DETAILS */
+
+.todo-ul {
+    list-style-type: none;
+}
+
+.todo-ul li {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.todo-ul li p {
+    cursor: pointer;
 }
 
 .input-container input {
@@ -33,27 +64,6 @@ h1 {
     border-radius: 10px;
     border: 1px solid black;
     cursor: pointer;
-}
-
-.list-container {
-    width: 60%;
-    margin: 0 auto;
-    margin-top: 60px;
-    background-color: lightblue;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.todo-ul {
-    list-style-type: none;
-}
-
-.todo-ul li {
-    margin: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid black;
 }
 
 .remove-mark {

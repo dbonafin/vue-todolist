@@ -16,7 +16,8 @@
         <h1>New ToDo list! - Now with Vue.js</h1>
 
         <div class="input-container">
-            <input type="text" v-model="newToDo.text" id="newtodo-input" placeholder="Aggiungi una cosa da fare">
+            <!-- The addItem works also if the user press enter on the keyboard -->
+            <input type="text" v-model="newToDoText" @keyup.enter="addItem()" id="newtodo-input" placeholder="Aggiungi una cosa da fare">
             <button id="newtodo-button" @click="addItem()">Aggiungi</button>
 
         </div>
@@ -26,7 +27,7 @@
             <ul class="todo-ul">
                 <!-- For each object in the array print a list-element in the DOM -->
                 <!-- If the element has the key done === true -> apply the css class "done" -->
-                <li v-for="singleToDo, index in listToDo" :class="{ 'done': singleToDo.done }">
+                <li v-for="(singleToDo, index) in listToDo" :class="{ 'done': singleToDo.done }" @click="doneToggle(singleToDo, index)">
 
                     <p>{{singleToDo.text}}</p>
 
