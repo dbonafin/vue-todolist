@@ -27,7 +27,7 @@
             <ul class="todo-ul">
                 <!-- For each object in the array print a list-element in the DOM -->
                 <!-- If the element has the key done === true -> apply the css class "done" -->
-                <li v-for="(singleToDo, index) in listToDo" :class="{ 'done': singleToDo.done }" @click="doneToggle(singleToDo, index)">
+                <li v-for="(singleToDo, index) in listToDo" :class="{ 'done': singleToDo.done }" @click="singleToDo.done = !singleToDo.done">
 
                     <p>{{singleToDo.text}}</p>
 
