@@ -21,11 +21,12 @@
             <ul class="todo-ul">
                 <!-- For each object in the array print a list-element in the DOM -->
                 <!-- If the element has the key done === true -> apply the css class "done" -->
-                <li v-for="singleToDo in listToDo" :class="{ 'done': singleToDo.done }">
+                <li v-for="singleToDo, index in listToDo" :class="{ 'done': singleToDo.done }">
 
                     <p>{{singleToDo.text}}</p>
-                    
-                    <div class="remove-mark">
+
+                    <!-- If the user clicks the x-mark -> remove the item from the list -->
+                    <div class="remove-mark" @click="removeItem(index)">
                         <i class="fa-regular fa-circle-xmark"></i>
                     </div>
                 </li>
