@@ -18,6 +18,10 @@ var app = new Vue(
    {
     el: "#root",
     data: {
+        newToDo: {
+            text: "",
+            done: false
+        },
         listToDo: [
             {
                 text: "Andare in palestra",
@@ -40,7 +44,13 @@ var app = new Vue(
     methods: {
         removeItem(index) {
             this.listToDo.splice(index, 1);
-        }
+        },
+        addItem() {
+            if(this.newToDo.text.length != 0) {
+                this.listToDo.push(this.newToDo);
+                this.newToDo.text = ""; 
+            }
+        },
     }
    }
 );
